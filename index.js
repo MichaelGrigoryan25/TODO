@@ -2,18 +2,11 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const db = mongoose.connection;
+// TODO: Add mySQL db
 const port = process.env.PORT || 80;
 const app = express();
 
 const mainRoute = require("./routes/main");
-
-mongoose.connect(process.env.DATABASE_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-db.on("error", (error) => console.log(error));
-db.once("open", () => console.log("Successfully connected to the database"));
 
 app.use(express.json());
 app.use(express.static('public/'));
