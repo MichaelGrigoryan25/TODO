@@ -1,31 +1,42 @@
 *, *::before, *::after {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.container{
-    width: 500px !important;
-    max-width: 50% !important;
-    padding: 80px;
+.container {
+  width: 500px !important;
+  max-width: 50% !important;
+  padding: 80px;
 }
 
 .card-container {
-    width: 300px;
-    max-width: 30%;
-    align-items: center;
-    justify-content: center;
+  width: 300px;
+  max-width: 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .done {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
+/*# sourceMappingURL=index.css.map */

@@ -1,41 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css">
-        <%- include ("./partials/bootstrap.css.ejs") %>
-        <title>TODO</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <%- include ("./partials/bootstrap.css.ejs") %>
+    <title>TODO</title>
+</head>
 
-    <body>
-
-        <div class="container">
-            <h1>TODO</h1>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Add a task to do..." aria-label="Add a task to do..." aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button type="button" class="btn btn-primary input-group-text">Add Note</button>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card" style="width: 300%; margin-bottom: 10px">
-                    <div class="card-body">
-                        <h5 class="card-title" id="title">Card title</h5>
-                        <hr class="solid">
-                        <h6 class="card-subtitle mb-2 text-muted"></h6>
-                        <span>Mark as complete</span>
-                    </h6>&nbsp;&nbsp;<input type="checkbox" id="checkbox">
-                    <br>
-                    <br>
-                    <a href="#" class="card-link">
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </a>
-                </div>
+<body>
+    <div class="container">
+        <h1>TODO</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Add a task to do...">
+            <div class="input-group-append">
+                <button type="button" class="btn btn-primary input-group-text">Add Note</button>
             </div>
         </div>
-    </body>
 
-</html></div><%- include ("./partials/bootstrap.js.ejs") %><script src="js/script.js"></script></body></html>
+        <!-- TODO: Add Cards Dynamically -->
+    </div>
+
+        <%- include ("./partials/bootstrap.js.ejs") %>
+</body>
+
+</html>

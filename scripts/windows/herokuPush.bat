@@ -1,1 +1,1 @@
-heroku container:push web && heroku container:release web
+cd ../../ && heroku container:push web && heroku container:release web
