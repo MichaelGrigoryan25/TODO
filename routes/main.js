@@ -6,7 +6,7 @@ const Task = require("../models/task");
 router.get("/", (req, res) => {
     Task.find()
     .then(tasks => {
-        res.render("index", { tasks });
+        res.render("index");
     })
     .catch(e => {
         res.status(404).render("index", { e });

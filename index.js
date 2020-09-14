@@ -15,7 +15,14 @@ app.set("views", "views");
 
 app.use("/", mainRoute);
 
-mongoose.connect("mongodb://mongo:27017/docker-todo-app", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_REMOTE, { useUnifiedTopology: true, useNewUrlParser: true })
+.then(() => {
+    console.log("DB --> OK");
+})
+.catch(e => {
+    console.log("DB --> ERROR");
+    console.log(e);
+})
 
 app.listen(port, () => {
     console.log(`Server started at port: ${port}`);
