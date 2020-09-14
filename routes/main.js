@@ -16,15 +16,18 @@ router.get("/", (req, res) => {
         database: mysqlDB
     };
     var connection = mySQL.createConnection(connectionOptions)
+    console.log(connectionOptions);
+    connection.connect();
+
+    connection.on("connect", () => {
+        console.log("Database connection -> OK");
+    });
+
     connection.on("error", (e) => {
+        console.log("Database connection -> ERROR");
         console.log(e);
     });
-    connection.on("connect", () => {
-        console.log("Connected Successfully to the DB");
-    })
-    console.log(connectionOptions);
-    
-    
+
     res.render("index");
 })
 
