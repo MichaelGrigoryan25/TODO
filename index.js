@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const express = require("express");
-const mongoose = require("mongoose");
 // TODO: Add mySQL db
 const port = process.env.PORT || 80;
 const app = express();
