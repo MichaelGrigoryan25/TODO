@@ -1,10 +1,10 @@
 require("dotenv").config();
 
 const express = require("express");
-// TODO: Add mySQL db
 const port = process.env.PORT || 80;
 const app = express();
 
+// Routes
 const mainRoute = require("./routes/main");
 
 app.use(express.json());
