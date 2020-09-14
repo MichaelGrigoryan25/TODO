@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
     const newTask = new Task({
-        id: new mongoose.Schema.Types.ObjectId,
+        id: new mongoose.Mongoose.Types.ObjectId,
         taskName: req.body.taskName,
     });
 

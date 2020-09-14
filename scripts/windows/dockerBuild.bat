@@ -1,1 +1,0 @@
-docker system prune --filter label=todo-app && docker build -t todoapp ../../ && docker run -dp 80:80 --name todo-app todoapp

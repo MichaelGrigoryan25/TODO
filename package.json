@@ -2,10 +2,12 @@
   "name": "todo-michaelgrigoryan",
   "version": "1.0.0",
   "description": "To Do app made with Node.js, Docker and mySQL",
+  "repository": "https://github.com/MichaelGrigoryan25/TODO",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "docker": "docker-compose up --build"
   },
   "author": "",
   "license": "ISC",
