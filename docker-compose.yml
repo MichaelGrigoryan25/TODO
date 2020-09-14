@@ -1,1 +1,15 @@
-# Add contents to support mySQL
+version: '3'
+services:
+  app:
+    container_name: docker-todo-app
+    restart: always
+    build: .
+    ports:
+      - '80:80'
+    external_links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'

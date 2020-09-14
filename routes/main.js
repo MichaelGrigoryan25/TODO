@@ -1,34 +1,31 @@
+const mongoose = require("mongoose");
+const task = require("../models/task");
 const router = require("express").Router();
-const mySQL = require("mysql");
+const Task = require("../models/task");
 
 router.get("/", (req, res) => {
+    Task.find()
+    .then(tasks => {
+        res.render("index", { tasks });
+    })
+    .catch(e => {
+        res.status(404).render("index", { e });
+    });
+})
 
-    var mysqlHost = process.env.MYSQL_HOST || "localhost";
-    var mysqlPort = process.env.MYSQL_PORT || "3306";
-    var mysqlUser = process.env.MYSQL_USER || "root";
-    var mysqlPass = process.env.MYSQL_PASS || "root";
-    var mysqlDB = process.env.MYSQL_DB || "node_db";
-    var connectionOptions = {
-        host: mysqlHost,
-        port: mysqlPort,
-        user: mysqlUser,
-        password: mysqlPass,
-        database: mysqlDB
-    };
-    var connection = mySQL.createConnection(connectionOptions)
-    console.log(connectionOptions);
-    connection.connect();
-
-    connection.on("connect", () => {
-        console.log("Database connection -> OK");
+router.post("/", (req, res) => {
+    const newTask = new Task({
+        id: new mongoose.Schema.Types.ObjectId,
+        taskName: req.body.taskName,
     });
 
-    connection.on("error", (e) => {
-        console.log("Database connection -> ERROR");
+    newTask.save()
+    .then(task => {
+        res.render("index");
+    })
+    .catch(e => {
         console.log(e);
-    });
-
-    res.render("index");
+    })
 })
 
 module.exports = router;
