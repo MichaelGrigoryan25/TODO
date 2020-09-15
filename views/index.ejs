@@ -11,18 +11,24 @@
 
 <body>
     <div class="container">
+
         <h1>TODO</h1>
-        <form action="/" method="POST">
-            <div class="input-group mb-3">
-                <input name="taskName" type="text" class="form-control" placeholder="Add a task..." required>
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary input-group-text">Add Note</button>
+        
+        <div class="form-container">
+            <form id="form" action="/create" method="POST">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="createTask" aria-describedby="createTask" name="createTask" placeholder="Add a task to do...">
                 </div>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+
+        <!-- TODO: Add dynamic task cards -->
+
     </div>
 
     <%- include ("./partials/bootstrap.js.ejs") %>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

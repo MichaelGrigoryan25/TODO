@@ -1,31 +1,49 @@
 const mongoose = require("mongoose");
-const task = require("../models/task");
 const router = require("express").Router();
 const Task = require("../models/task");
 
+//  TODO: Fetch task cards dynamically
 router.get("/", (req, res) => {
     Task.find()
-    .then(tasks => {
-        res.render("index");
-    })
-    .catch(e => {
-        res.status(404).render("index", { e });
-    });
-})
+        .then(tasks => {
+            res.render("index", { "allTasks": tasks});
+        })
+        .catch(e => {
+            res.redirect(200, "/");
+            console.log(e);
+        });
+});
 
-router.post("/", (req, res) => {
+//  TODO: GET task cards dynamically
+router.post("/create", async (req, res) => {
+
     const newTask = new Task({
-        id: new mongoose.Mongoose.Types.ObjectId,
-        taskName: req.body.taskName,
+        taskName: req.body.createTask,
+        date: Date.now(),
     });
 
-    newTask.save()
-    .then(task => {
-        res.render("index");
+    await newTask
+        .save()
+        .then(() => {
+            res.redirect("/")
+        })
+        .catch(e => {
+            console.log(e);
+        });
+
+});
+
+// TODO: DELETE cards when removing an object
+router.post("/delete/:objectId", async (req, res) => {
+    const objectId = req.params.objectId;
+    await Task.findByIdAndRemove(objectId, { useFindAndModify: false })
+    .then(() => {
+        res.redirect(200, "/");
     })
     .catch(e => {
         console.log(e);
-    })
-})
+        res.redirect(500, "/")
+    });
+});
 
 module.exports = router;

@@ -19,13 +19,14 @@ body {
     padding: 80px;
 }
 
-.card-container {
-    width: 300px;
-    max-width: 30%;
-    align-items: center;
-    justify-content: center;
-}
-
 .done {
     text-decoration: line-through;
+}
+
+.task {
+    width: 400px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }

@@ -25,18 +25,19 @@ body {
   padding: 80px;
 }
 
-.card-container {
-  width: 300px;
-  max-width: 30%;
+.done {
+  text-decoration: line-through;
+}
+
+.task {
+  width: 400px;
+  max-width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.done {
-  text-decoration: line-through;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=index.css.map */
