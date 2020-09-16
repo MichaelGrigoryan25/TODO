@@ -28,6 +28,7 @@ router.post("/create", async (req, res) => {
         })
         .catch(e => {
             console.log(e);
+            res.redirect("/")
         });
 
 });
