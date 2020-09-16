@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 app.use("/", mainRoute);
 
-mongoose.connect(process.env.DB_REMOTE, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(process.env.DB_DOCKER, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(() => {
         console.log("DB --> OK");
     })

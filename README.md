@@ -9,7 +9,7 @@ Made by [Michael Grigoryan](https://github.com/MichaelGrigoryan)
 You'll need to create a `.env` file in the project root and have this parameter:<br>
 ```
 DB_REMOTE=YOUR_REMOTE_MONGODB_UI
-DB_CONTAINERIZED=YOUR_CONTAINERIZED_MONGODB_URI
+DB_DOCKER=YOUR_CONTAINERIZED_MONGODB_URI
 ```
 If you choose to deploy with Docker `DB_REMOTE` is completely optional.
 If you choose to deploy with Node.js `DB_CONTAINERIZED` is completely optional.
