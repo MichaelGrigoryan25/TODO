@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class="container">
 
         <h1>TODO</h1>
@@ -19,11 +20,20 @@
                 <div class="form-group">
                   <input type="text" class="form-control" id="createTask" aria-describedby="createTask" name="createTask" placeholder="Add a task to do...">
                 </div>
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary input-group-text">Add</button>
             </form>
         </div>
 
-        <!-- TODO: Add dynamic task cards -->
+        <% tasks.forEach(task => { %>
+                <div class="task">
+                    <hr class="solid">
+                    <h4><%= task.taskName %></h4>
+                    <param name="objectId" value="<%= task._id %>">
+                    <form action="/delete/" method="POST">
+                        <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>
+                    </form>
+                </div>
+        <% }) %>
 
     </div>
 

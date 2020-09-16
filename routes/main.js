@@ -6,10 +6,10 @@ const Task = require("../models/task");
 router.get("/", (req, res) => {
     Task.find()
         .then(tasks => {
-            res.render("index", { "allTasks": tasks});
+            res.render("index", { tasks: tasks });
         })
         .catch(e => {
-            res.redirect(200, "/");
+            res.redirect("/");
             console.log(e);
         });
 });
@@ -34,15 +34,15 @@ router.post("/create", async (req, res) => {
 });
 
 // TODO: DELETE cards when removing an object
-router.post("/delete/:objectId", async (req, res) => {
+router.post("/delete/:objectId", async(req, res) => {
     const objectId = req.params.objectId;
     await Task.findByIdAndRemove(objectId, { useFindAndModify: false })
     .then(() => {
-        res.redirect(200, "/");
+        res.redirect("/");
     })
     .catch(e => {
         console.log(e);
-        res.redirect(500, "/")
+        res.redirect("/")
     });
 });
 
