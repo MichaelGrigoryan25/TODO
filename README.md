@@ -1,6 +1,6 @@
 # TODO 📃 - An open-source To Do app
 
-Made by [Michael Grigoryan](https://github.com/MichaelGrigoryan)
+Made by [Michael Grigoryan](https://github.com/MichaelGrigoryan25)
 <br>
 [License](./)
 <hr>
