@@ -11,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    overflow-x: hidden;
 }
 
 .container {
@@ -29,4 +30,9 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+}
+
+.task-container {
+    position: absolute;
+    padding-bottom: 20px;
 }

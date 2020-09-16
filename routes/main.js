@@ -19,7 +19,6 @@ router.post("/create", async (req, res) => {
 
     const newTask = new Task({
         taskName: req.body.createTask,
-        date: Date.now(),
     });
 
     await newTask
